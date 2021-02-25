@@ -30,7 +30,7 @@ class VideoFramer
                 . ' -vf fps='
                 . $fps
                 . ' '
-                . escapeshellarg($frameFilenameTemplate)
+                . $frameFilenameTemplate
         );
     }
 }
