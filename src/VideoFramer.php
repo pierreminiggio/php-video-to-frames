@@ -14,6 +14,12 @@ class VideoFramer
             );
         }
 
+        if (! str_contains($frameFilenameTemplate, '.')) {
+            throw new BadFrameFilenameTemplateException(
+                'Your template string is missing a file extension for your frames, example : ".png"'
+            );
+        }
+
         if (! file_exists($videoFilename)) {
             throw new InvalidVideoFileException();
         }
