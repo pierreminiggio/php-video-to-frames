@@ -5,6 +5,10 @@ namespace PierreMiniggio\VideoToFrames;
 class VideoFramer
 {
 
+    /**
+     * @throws BadFrameFilenameTemplateException
+     * @throws InvalidVideoFileException
+     */
     public function frame(string $videoFilename, string $frameFilenameTemplate, int $fps = 1): void
     {
 
