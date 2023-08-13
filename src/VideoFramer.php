@@ -12,9 +12,9 @@ class VideoFramer
     public function frame(string $videoFilename, string $frameFilenameTemplate, int $fps = 1): void
     {
 
-        if (! str_contains($frameFilenameTemplate, '%d')) {
+        if (! str_contains($frameFilenameTemplate, '%') && ! str_contains($frameFilenameTemplate, 'd')) {
             throw new BadFrameFilenameTemplateException(
-                'You need to have "%d" in your template string to host the frame number'
+                'You need to have "%d" or "%OXd" (X being a number) in your template string to host the frame number'
             );
         }
 
